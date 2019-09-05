@@ -8,7 +8,12 @@ class SelectSort : public Sort {
         SelectSort(int *elements, size_t size) : Sort(elements, size) {}
 
         void execute() {
-            // TODO
+            for(int i = 0; i< size; i++)
+            {
+                int min = *(min_element(elements+i,elements+size));
+                int valor =*(find(elements+i,elements+size,min));
+                swap(elements[i],valor);
+            }
         }
 
         inline string name() { return "SelectSort"; }
